@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timezone Grid</title>
+    <style>
+      body {
+        background-color: darkgrey;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      h1 {
+        color: white;
+      }
+
+      .timezone {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        margin-top: 50px;
+      }
+
+      .timezone-card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .timezone-card h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+
+      .timezone-card p {
+        margin-bottom: 0;
+        font-size: 18px;
+      }
+
+      .clock {
+        color: white;
+        font-size: 48px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Timezone Grid</h1>
+    <div class="timezone">
+      <div class="timezone-card">
+        <h2>Fukuoka, JST</h2>
+        <p>
+          <span id="fukuokaTime"></span>
+        </p>
+      </div>
+      <div class="timezone-card">
+        <h2>Singapore, GMT +8</h2>
+        <p>
+          <span id="singaporeTime"></span>
+        </p>
+      </div>
+      <div class="timezone-card">
+        <h2>Berlin, CEST</h2>
+        <p>
+          <span id="berlinTime"></span>
+        </p>
+      </div>
+      <div class="timezone-card">
+        <h2>Warsaw, CEST</h2>
+        <p>
+          <span id="warsawTime"></span>
+        </p>
+      </div>
+      <div class="timezone-card">
+        <h2>Helsinki, EEST</h2>
+        <p>
+          <span id="helsinkiTime"></span>
+        </p>
+      </div>
+      <div class="timezone-card">
+        <h2>UTC</h2>
+        <p>
+          <span id="utcTime"></span>
+        </p>
+      </div>
+      <div class="timezone-card">
+        <h2>Montreal, EDT</h2>
+        <p>
+          <span id="montrealTime"></span>
+        </p>
+      </div>
+      <div class="timezone-card">
+        <h2>Iowa City, CDT</h2>
+        <p>
+          <span id="iowaCityTime"></span>
+        </p>
+      </div>
+      <div class="timezone-card">
+        <h2>PDT / PST</h2>
+        <p>
+          <span id="pdtTime"></span>
+        </p>
+      </div>
+    </div>
+    <script>
+      function updateTime() {
+        var fukuokaTime = new Date().toLocaleString("en-US", {
+          timeZone: "Asia/Tokyo"
+        });
+        document.getElementById("fukuokaTime").textContent = fukuokaTime;
+        var singaporeTime = new Date().toLocaleString("en-US", {
+          timeZone: "Asia/Singapore"
+        });
+        document.getElementById("singaporeTime").textContent = singaporeTime;
+        var berlinTime = new Date().toLocaleString("en-US", {
+          timeZone: "Europe/Berlin"
+        });
+        document.getElementById("berlinTime").textContent = berlinTime;
+        var warsawTime = new Date().toLocaleString("en-US", {
+          timeZone: "Europe/Warsaw"
+        });
+        document.getElementById("warsawTime").textContent = warsawTime;
+        var helsinkiTime = new Date().toLocaleString("en-US", {
+          timeZone: "Europe/Helsinki"
+        });
+        document.getElementById("helsinkiTime").textContent = helsinkiTime;
+        var utcTime = new Date().toLocaleString("en-US", {
+          timeZone: "UTC"
+        });
+        document.getElementById("utcTime").textContent = utcTime;
+        var montrealTime = new Date().toLocaleString("en-US", {
+          timeZone: "America/Montreal"
+        });
+        document.getElementById("montrealTime").textContent = montrealTime;
+        var iowaCityTime = new Date().toLocaleString("en-US", {
+          timeZone: "America/Chicago"
+        });
+        document.getElementById("iowaCityTime").textContent = iowaCityTime;
+        var pdtTime = new Date().toLocaleString("en-US", {
+          timeZone: "America/Los_Angeles"
+        });
+        document.getElementById("pdtTime").textContent = pdtTime;
+      }
+      setInterval(updateTime, 1000); // Update time every second
+    </script>
+  </body>
+</html>
